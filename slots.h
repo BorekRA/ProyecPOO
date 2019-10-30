@@ -4,18 +4,16 @@
 
 #ifndef SLOTS_SLOTS_H
 #define SLOTS_SLOTS_H
+#include "tipos.h"
 
-
-class slots {
+class slots_t {
 private:
-    int forma;
-    int estado;
-    int dimensiones;
-    int contenido;
+    long ejeX
+    long ejeY
 public:
-    void guardar();
-    void abrirse();
-    void cerrar();
+    slots_t(long ejeX,long ejeY);
+    long get_ejeX;
+    long get_ejeY;
 };
 
 
