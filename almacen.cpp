@@ -1,4 +1,3 @@
-
 //
 // Created by Mate on 31/10/2019.
 //
@@ -7,21 +6,22 @@
 #include "slots.h"
 #include "tipos.h"
 #include "robot.h"
-#include <SFML/Graphics/RenderWindow.hpp>
+#include <SFML/Graphics/RenderWindow.hpp>}
+using namespace std;
 
-void almacen::draw_rectangle(posicion x, posicion y, longitud h, longitud w) {
+void almacen::draw_rectangle(posicion a, posicion b, longitud x, longitud y) {
     sf::RectangleShape rect;
-    rect.setSize(sf::Vector2f(h,w));
-    rect.setPosition(x,y);
+    rect.setSize(sf::Vector2f(x,y));
+    rect.setPosition(a,b);
     rect.setFillColor(sf::Color::Black);
     rect.setOutlineThickness(2);
     rect.setOutlineColor(sf::Color::White);
     canvas->draw(rect);
 }
 
-almacen::almacen(longitud h, longitud w, valor fl, valor cl, sf::RenderWindow *cnv) {
-    altura=h;
-    ancho=w;
+almacen::almacen(longitud x, longitud y, valor fl, valor cl, sf::RenderWindow *cnv) {
+    altura=x;
+    ancho=y;
     col=cl;
     fil=fl;
     canvas=cnv;
@@ -38,7 +38,7 @@ almacen::almacen(longitud h, longitud w, valor fl, valor cl, sf::RenderWindow *c
 void almacen::draw() {
   for (int i=0; i<fil;i++){
     for (int j=0;j<col;j++){
-      draw_rectangle(slots[i][j].get_altura()*j;slots[i][j].get_ancho()*i;slots[i][j].get_altura();slots[i][j].get_ancho();)
+      draw_rectangle(slots[i][j].get_ejeY()*j;slots[i][j].get_ejeX()*i;slots[i][j].get_ejeY();slots[i][j].get_ejeX());
     }
   }
 }
