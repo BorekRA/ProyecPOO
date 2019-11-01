@@ -19,10 +19,10 @@ private:
     sf::RenderWindows* canvas;
     vector<vector<slots>> slots;
     vector<producto> producto;
-    void draw_rectangle(longitud x, longitud y,  f, valor c);
+    void draw_rectangle(posicion a, posicion b, longitud x, longitud y);
 public:
     void get_slots(valor x,valor y);
-    almacen(longitud h, longitud w, valor fl, valor cl, sf::RenderWindow *cnv);
+    almacen(longitud x, longitud y, valor fl, valor cl, sf::RenderWindow *cnv);
     void draw();
 
 };
