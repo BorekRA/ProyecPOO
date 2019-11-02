@@ -6,9 +6,9 @@ slots_t::slots_t(long ejeX,long ejeY):ejeX{x},ejeY{y} {
  ejeX=x;
  ejeY=y;
 }
-longitud slots_t::get_ejeX(){
+long slots_t::get_ejeX(){
  return ejeX; 
 }
-longitud slots_t::get_ejeY(){
+long slots_t::get_ejeY(){
  return ejeY; 
 }
