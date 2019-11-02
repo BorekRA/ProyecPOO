@@ -17,8 +17,8 @@ private:
     valor col;
     valor fil;
     sf::RenderWindows* canvas;
-    vector<vector<slots>> slots;
-    vector<producto> producto;
+    mtr slots;
+    vtr producto;
     void draw_rectangle(posicion a, posicion b, longitud x, longitud y);
 public:
     void get_slots(valor x,valor y);
