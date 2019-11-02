@@ -4,31 +4,21 @@
 
 #ifndef PROYECTOPOO_ROBOT_H
 #define PROYECTOPOO_ROBOT_H
-// ------poner using Clase=tipo; de todas las clases-----
-using producto=int;
-using slot=int;
-//--------------------------------------------------------
-class Robot {
- private:
-  //----tipo int---
-  entero numero_robot;
-  //----Tipo doble---
-  deci peso;
-  deci bateria;
-  //---Tipo texto -----
-  str estado;
-  str producto_llevar;
-  //---tipo posicion--
-  posicion casa;
-  posicion y;
-  posicion x;
- public:
-  estado();
-  posicion();//--para x e y---
-  consegur destino();
-  mover();
-  dar();
-  coger();
+#include "tipos.h"
+class robot {
+  private:
+  posicion x1;
+  posicion y1;
+  valor numero;
+  posicion x2;
+  posicion y2;
+  banderita estado;
+  valor bateria;
+  public:
+  void set.casa(posicion x, posicion y);
+  void set.destino(posicion x, posicion y);
+  void set.estado(banderita estado);
+  void get.orden();
+  
 };
-//--------------------------------------------------------
 #endif //PROYECTOPOO_ROBOT_H
