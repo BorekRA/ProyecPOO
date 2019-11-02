@@ -10,7 +10,7 @@
 #include <SMFL/Graphics/RenderWindow.hpp>
 #include "tipos.h"
 
-class almacen {
+class Calmacen {
 private:
     longitud altura;
     longitud ancho;
