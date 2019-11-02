@@ -9,5 +9,6 @@ using posicion=size_t;
 using decimal=double;
 using texto=string;
 using valor=unsigned int;
+typedef vector<vector<int>> vetr;
 
 #endif //PROYECPOO_TIPOS_H
