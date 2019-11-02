@@ -3,6 +3,6 @@
 //                     Malla Carrillo, Mateo Rodrigo
 //                     Rodriguez Arce, Norel Rosendo
 // Responsabilidades:
-// Robot pt1, Almacen ----> Mateo Malla
-// Slots, Diagrama, Robot pt2 ----> Norel Rodriguez
-// Orden, Producto, Robot pt3 ----> Leonardo López
+// Robot 30%, Almacen ----> Mateo Malla
+// Slots, Diagrama, Orden ----> Norel Rodriguez
+// Producto, Robot 70% ----> Leonardo López
