@@ -10,5 +10,7 @@ using decimal=double;
 using texto=string;
 using valor=unsigned int;
 typedef vector<vector<int>> vetr;
+typedef vector<number_t> row_t;
+typedef vector<row_t> matrix_t;
 
 #endif //PROYECPOO_TIPOS_H
