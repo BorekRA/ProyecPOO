@@ -9,7 +9,7 @@
 #include <SFML/Graphics/RenderWindow.hpp>}
 using namespace std;
 
-void almacen::draw_rectangle(posicion a, posicion b, longitud x, longitud y) {
+void Calmacen::draw_rectangle(posicion a, posicion b, longitud x, longitud y) {
     sf::RectangleShape rect;
     rect.setSize(sf::Vector2f(x,y));
     rect.setPosition(a,b);
@@ -19,7 +19,7 @@ void almacen::draw_rectangle(posicion a, posicion b, longitud x, longitud y) {
     canvas->draw(rect);
 }
 
-almacen::almacen(longitud x, longitud y, valor fl, valor cl, sf::RenderWindow *cnv) {
+almacen::Calmacen(longitud x, longitud y, valor fl, valor cl, sf::RenderWindow *cnv) {
     altura=x;
     ancho=y;
     col=cl;
@@ -35,7 +35,7 @@ almacen::almacen(longitud x, longitud y, valor fl, valor cl, sf::RenderWindow *c
     }
 }
 
-void almacen::draw() {
+void Calmacen::draw() {
   for (int i=0; i<fil;i++){
     for (int j=0;j<col;j++){
       draw_rectangle(slots[i][j].get_ejeY()*j;slots[i][j].get_ejeX()*i;slots[i][j].get_ejeY();slots[i][j].get_ejeX());
