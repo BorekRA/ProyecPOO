@@ -19,7 +19,7 @@ void Calmacen::draw_rectangle(posicion a, posicion b, longitud x, longitud y) {
     canvas->draw(rect);
 }
 
-almacen::Calmacen(longitud x, longitud y, valor fl, valor cl, sf::RenderWindow *cnv) {
+Calmacen::Calmacen(longitud x, longitud y, valor fl, valor cl, sf::RenderWindow *cnv) {
     altura=x;
     ancho=y;
     col=cl;
