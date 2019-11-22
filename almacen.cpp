@@ -6,7 +6,7 @@
 #include "slots.h"
 #include "tipos.h"
 #include "robot.h"
-#include <SFML/Graphics/RenderWindow.hpp>}
+#include <SFML/Graphics/RenderWindow.hpp>
 using namespace std;
 
 void Calmacen::draw_rectangle(posicion a, posicion b, longitud x, longitud y) {
