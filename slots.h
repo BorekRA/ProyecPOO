@@ -5,16 +5,13 @@
 #ifndef SLOTS_SLOTS_H
 #define SLOTS_SLOTS_H
 #include "tipos.h"
-
-class slots_t {
+class slosts_t{
 private:
-    long ejeX
-    long ejeY
+    long ejex;
+    long ejey;
 public:
-    slots_t(long ejeX,long ejeY);
-    long get_ejeX;
-    long get_ejeY;
+    slosts_t(long ejex, long ejey);
+    long get_posx();
+    long get_posy();
 };
-
-
 #endif //SLOTS_SLOTS_H
