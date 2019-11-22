@@ -2,13 +2,13 @@
 using "slots.h"
 using "robots.h"
 using "producto.h"
-slots_t::slots_t(long ejeX,long ejeY):ejeX{x},ejeY{y} {
- ejeX=x;
- ejeY=y;
+slosts_t::slosts_t(long ejex, long ejey):ejex{ejex},ejey{ejey} {
 }
-long slots_t::get_ejeX(){
- return ejeX; 
+
+long slosts_t::get_posx() {
+    return ejex;
 }
-long slots_t::get_ejeY(){
- return ejeY; 
+
+long slosts_t::get_posy() {
+    return ejey;
 }
