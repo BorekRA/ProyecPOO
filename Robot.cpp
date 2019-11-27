@@ -1,57 +1,72 @@
-#include "Robot.h"
-#include "Slot.h"
-#include "Producto.h"
-Crobot::Crobot(valor num, matrix_t cs, valor btr, banderita stad):numero(num), casa(cs), estado (stad){
-
+#include <iostream>
+#include "tipos.h"
+#include "almacen.h"
+void inicio(){
+    cout<<"--------------------------------------------------"<<endl;
+    valor columnas=0;
+    valor filas=0;
+    cout<<"# De Columnas: ";
+    cin>>columnas;
+    cout<<endl<<"# De Filas: ";
+    cin>>filas;
+    Calmacen A1(columnas,filas);
+    A1.almacen_vacio();
+    A1.imprimir_almacen_vacio();
+    cout<<"--------------------------------------------------"<<endl;
 }
-
-valor Crobot::get_bateria() {
-    return bateria;
-}
-
-valor Crobot::get_orden() {
-    return orden;
-}
-
-void Crobot::set_casa(matrix_t cs) {
-valor x,y;
-cin>>x;
-cin>>y;
-cs[x][y];
-casa=cs;
-}
-
-void Crobot::set_destino(matrix_t dest) {
-    valor x,y;
-    if(dest==casa) destino=casa;
-    else{
-    cin>>x;
-    cin>>y;
-    dest[x][y];
-    destino=dest;}
-}
-
-banderita Crobot::set_estado(banderita stad) {
-    if(estado="ocupado"){
-        stad=false;
+void crear_robots(){
+    valor numero_robots=0;
+    cout<<"Número de Robots : ";
+    cin>>numero_robots;
+    cout<<endl;
+    texto posicion_origen;
+    /*
+       * for(valor c=0;c<numero_robots;c++){
+       * robot rc(c,[0][0],100,true);
+       * rc.set_casa();
+       * }
+       */
+    cout<<"--------------------------------------------------"<<endl;
     }
-    else{
-        stad=true;
+void menu(){
+    cout<<"--------------------------------------------------"<<endl;
+    cout<<"1.- Ingresar un producto"<<endl;
+    cout<<"2.- Retirar un producto"<<endl;
+    cout<<"3.- Estado de un Robot"<<endl;
+    cout<<"4.- Estado del almacen"<<endl;
+    cout<<"5.- Cerrar el programa"<<endl;
+    cout<<"--------------------------------------------------"<<endl;
+}
+int main() {
+    valor num_operaciones = 0;
+    valor operacion = 0;
+    inicio();
+    crear_robots();
+    cout << "-----Cuantas operaciones desea hacer ?----" << endl;
+    cin >> num_operaciones;
+    for (valor c = 0; c < num_operaciones; c++) {
+        menu();
+        cout << "-----Que operacion desea realizar ?----" << endl;
+        cin >> operacion;
+        //-------------------------------------------------------------------------------------
+        valor robot = 0;
+        cout << "Que robot desea que realize la operacion" << endl;
+        cin >> robot;
+        switch (operacion) {
+            case 1:
+                cout << "---Ingresar un producto---" << endl;
+                robot = 0;
+            case 2:
+                cout << "---Retirar producto---" << endl;
+                robot = 0;
+            case 3:
+                cout << "---Estado Robot---" << endl;
+                robot = 0;
+            case 4:
+                cout << "---Almacen---" << endl;
+                robot = 0;
+            case 5:
+                break;
+        }
     }
 }
-
-void Crobot::set_bateria() {
-valor num_mov;
-    if (num_mov==5)bateria-=5;
-}
-void Crobot::recargar_bateria() {
-    if(bateria==10) {
-        set_destino(casa);
-        bateria = 100;
-    }
-}
-
-void Crobot::set_orden(valor odr) {
-orden=odr;
-}
-
