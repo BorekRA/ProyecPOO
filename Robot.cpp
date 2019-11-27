@@ -1,29 +1,28 @@
-void Crobot::set_destino(matrix_t dest) {
-    valor x,y;
-    if(dest==casa) destino=casa;
-    else{
-    cin>>x;
-    cin>>y;
-    dest[x][y];
-    destino=dest;
-    destino=dest;}
+#include "robot.h"
+#include "producto.h"
+CRobot::CRobot(t_ent nam, t_posicion x, t_posicion y):name(nam), pos_x(x), pos_y(y) {
+battery=100;
+order = nullptr;
+home[x][y];
 }
 
-banderita Crobot::set_estado(banderita stad) {
-    void Crobot::set_bateria() {
-valor num_mov;
-    if (num_mov==5)bateria-=5;
+t_ent CRobot::get_battery() {
+    return battery;
 }
 
-void Crobot::recargar_bateria() {
-if(bateria==15)
-    bateria=100;
-    if(bateria==10) {
-        set_destino(casa);
-        bateria = 100;
-    }
+banderita CRobot::set_state(banderita stad) {
+    return state;
 }
 
-void Crobot::set_orden(valor odr) {
-orden=odr;
+void CRobot::recharge_battery() {
+if (battery==10) battery=100;
+}
+
+void CRobot::set_order(COrden *p_order) {
+order=p_order;
+}
+
+void CRobot::alternate_state() {
+    if (state != 0) state=false;
+    if (state == 0) state=true;
 }
