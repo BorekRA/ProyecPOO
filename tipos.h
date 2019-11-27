@@ -1,8 +1,12 @@
-#ifndef PROYECPOO_TIPOS_H
-#define PROYECPOO_TIPOS_H
+#ifndef PROYECTO_POO_TIPOS_H
+#define PROYECTO_POO_TIPOS_H
+
+
 #include<iostream>
 #include <vector>
 #include<string>
+#include <iomanip>
+#include <cstdlib>
 using namespace std;
 using longitud=int;
 using posicion=size_t;
@@ -13,11 +17,13 @@ typedef vector<vector<int>> vetr;
 typedef vector<int> row_t;
 typedef vector<row_t> matrix_t;
 typedef bool banderita;
+typedef bool verificador;
 typedef int t_ent;
 typedef double t_decimal;
 typedef std::string t_texto;
+typedef int t_posicion;
 
 
 using namespace std;
 
-#endif //PROYECPOO_TIPOS_H
+#endif //PROYECTO_POO_TIPOS_H
