@@ -1,65 +1,72 @@
 #include <iostream>
 #include "tipos.h"
-//CREAR FUNCIONES PARA Q NO SEA TAN LARGO 
-int main() {
+#include "almacen.h"
+void inicio(){
     cout<<"--------------------------------------------------"<<endl;
-    texto largo=" ";
-    texto ancho=" ";
-    cout<<"Largo del almacen: ";
-    cin>>largo;
-    cout<<endl<<"Ancho del almacen: ";
-    cin>>ancho;
-    //CREAR ALMACEN----------------------------------------
+    valor columnas=0;
+    valor filas=0;
+    cout<<"# De Columnas: ";
+    cin>>columnas;
+    cout<<endl<<"# De Filas: ";
+    cin>>filas;
+    Calmacen A1(columnas,filas);
+    A1.almacen_vacio();
+    A1.imprimir_almacen_vacio();
     cout<<"--------------------------------------------------"<<endl;
+}
+void crear_robots(){
     valor numero_robots=0;
     cout<<"Número de Robots : ";
     cin>>numero_robots;
     cout<<endl;
     texto posicion_origen;
-    for(valor i=0;i<numero_robots;i++){
-        cout<<"Origen del Robot #"<<i+1<<endl;
-        cin>>posicion_origen;
-        //-----------------------Crear i robots y setear casas
-        }
-    valor numero_instrucciones=0;
+    /*
+       * for(valor c=0;c<numero_robots;c++){
+       * robot rc(c,[0][0],100,true);
+       * rc.set_casa();
+       * }
+       */
     cout<<"--------------------------------------------------"<<endl;
-    cout<<"Numero de instrucciones: ";
-    cin>>numero_instrucciones;
-    for(valor c=0;c<numero_instrucciones;c++){
-        cout<<"--------------------------------------------------"<<endl;
-        valor operacion=0;
-        cout<<"Que operacion desea hacer??  "<<endl;
-        cout<<"1.- Ingresar un producto"<<endl;
-        cout<<"2.- Retirar un producto"<<endl;
-        cout<<"3.- Estado del Robot"<<endl;
-        cout<<"4.- Cerrar el programa"<<endl;
-        cin>>operacion;
-        if(operacion==1){
-            cout<<endl<<"--------------------------------------------------"<<endl;
-            cout<<"Que numero de Robot desea que realice la operacion"<<endl;
-            valor robotx=0;
-            cin>>robotx;
+    }
+void menu(){
+    cout<<"--------------------------------------------------"<<endl;
+    cout<<"1.- Ingresar un producto"<<endl;
+    cout<<"2.- Retirar un producto"<<endl;
+    cout<<"3.- Estado de un Robot"<<endl;
+    cout<<"4.- Estado del almacen"<<endl;
+    cout<<"5.- Cerrar el programa"<<endl;
+    cout<<"--------------------------------------------------"<<endl;
+}
+int main() {
+    valor num_operaciones = 0;
+    valor operacion = 0;
+    inicio();
+    crear_robots();
+    cout << "-----Cuantas operaciones desea hacer ?----" << endl;
+    cin >> num_operaciones;
+    for (valor c = 0; c < num_operaciones; c++) {
+        menu();
+        cout << "-----Que operacion desea realizar ?----" << endl;
+        cin >> operacion;
+        //-------------------------------------------------------------------------------------
+        valor robot = 0;
+        cout << "Que robot desea que realize la operacion" << endl;
+        cin >> robot;
+        switch (operacion) {
+            case 1:
+                cout << "---Ingresar un producto---" << endl;
+                robot = 0;
+            case 2:
+                cout << "---Retirar producto---" << endl;
+                robot = 0;
+            case 3:
+                cout << "---Estado Robot---" << endl;
+                robot = 0;
+            case 4:
+                cout << "---Almacen---" << endl;
+                robot = 0;
+            case 5:
+                break;
         }
-        if(operacion==2) {
-            cout << endl << "--------------------------------------------------" << endl;
-            cout << endl << "Que numero de Robot desea que realice la operacion";
-            valor robotx=0;
-            cin>>robotx;
-            //robotx.retirar
-        }
-        if(operacion==3){
-            cout<<endl<<"--------------------------------------------------"<<endl;
-            cout<<endl<<"Que numero de Robot desea que realice la operacion:  ";
-            valor robotx=0;
-            cin>>robotx;
-            cout<<"    Robot #"<<robotx;
-            cout<<endl<<"    Destino: ";
-            cout<<endl<<"    Producto: ";
-            cout<<endl<<"    % Bateria: ";
-            cout<<endl<<"--------------------------------------------------"<<endl;
-        }
-        if(operacion==4)
-            break;
-        }
-
+    }
 }
