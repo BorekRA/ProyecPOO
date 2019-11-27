@@ -1,14 +1,23 @@
-//
-// Created by norel on 11/1/19.
-//
-#include "Orden.h"
-int Orden::set_prioridad() {
-    
+#include "orden.h"
+#include "producto.h"
+
+void COrden::set_prioridad(t_ent prior){
+    prioridad=prior;
+};
+void COrden::recoger_producto(t_posicion x, t_posicion y){
+
+};
+void COrden::almacenar_producto(t_posicion x, t_posicion y){
+
+};
+void COrden::cambiar_producto(t_posicion x, t_posicion y){
+
 }
-int Orden::get_posicionFinal(){
-    return poscionFinal(x,y);
+
+COrden::COrden(t_posicion x, t_posicion y): pos_x(x), pox_y(y) {
+
 }
-Orden::PosicionFinal(x,y){
-    Posx=x;
-    Posy=y;
-}
+
+void COrden::set_destino(t_posicion x, t_posicion y) {
+
+};
