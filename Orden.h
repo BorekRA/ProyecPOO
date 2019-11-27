@@ -1,25 +1,25 @@
-//
-// Created by norel on 11/1/19.
-//
+#ifndef PROYECTO_POO_ORDEN_H
+#define PROYECTO_POO_ORDEN_H
 
-#ifndef PROYECTOPOO_ORDEN_H
-#define PROYECTOPOO_ORDEN_H
+#include "robot.h"
+#include "tipos.h"
+#include "producto.h"
 
-#include <string>
-#include <ionstream>
-using namespace std;
-typedef int Posx;
-typedef int Posy;
-typedef entero;
-typedef int prioridad;
-class Orden {
+class COrden {
 private:
-    prioridad prioridad1;
+    t_ent prioridad;
+    t_posicion pos_x;
+    t_posicion pox_y;
+
 public:
-    set_prioridad();
-    posicionFinal(x,y);
-    get_posicionFinal
+    COrden(t_posicion x, t_posicion y);
+    void set_prioridad (t_ent prior);
+    void recoger_producto(t_posicion x, t_posicion y);
+    void almacenar_producto(t_posicion x, t_posicion y);
+    void cambiar_producto(t_posicion x, t_posicion y);
+    void set_destino(t_posicion x, t_posicion y);
+    //void sumar_restar_cantidad( t_ent cant, Cproducto prod);
+
 };
 
-
-#endif //PROYECTOPOO_ORDEN_H
+#endif //PROYECTO_POO_ORDEN_H
