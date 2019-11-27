@@ -1,5 +1,6 @@
 #include "funciones.h"
 #include "tipos.h"
+#include "almacen.h"
 void menu_principal() {
     cout<<"MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM"<<endl;
     cout<<"-------------------**********---------------------"<<endl;
@@ -11,7 +12,6 @@ void menu_principal() {
     cout<<"Leonardo López"<<endl<<"Mateo Malla"<<endl<<"Norel Rodriguez"<<endl;
     cout<<endl;
 }
-
 void agregar_robots() {
     cout<<"MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM"<<endl;
     cout<<"-----------------Menu: Agregar Robots-------------"<<endl;
@@ -40,27 +40,30 @@ void print_almacen() {
     cout<<"MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM"<<endl;
     cout<<"------------------Menu: Ordenes-------------------"<<endl;
     cout<<"WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW"<<endl<<endl;
-
-    texto filas;
-    texto columnas;
-    cout<<"N° filas del almacen: "; cin>>filas; cout<<endl;
-    cout<<"N° columnas del almacen: "; cin>>columnas; cout<<endl;
-    //agregar metod de clase almacen
+    valor columnas=0;
+    valor filas=0;
+    cout<<"# De Columnas: ";
+    cin>>columnas;
+    cout<<endl<<"# De Filas: ";
+    cin>>filas;
+    Calmacen A1(columnas,filas);
+    A1.almacen_vacio();
+    A1.imprimir_almacen_vacio();
 }
 
 void ejecucion_de_ordenes() {
-    bool continuar=true;
-    while (continuar==true){
-        t_ent operacion=0;
-        cout<<"MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM"<<endl;
-        cout<<"Que operacion desea hacer??  "<<endl;
-        cout<<"1.- Ingresar un producto"<<endl;
-        cout<<"2.- Retirar un producto"<<endl;
-        cout<<"3.- Estado del Robot"<<endl;
-        cout<<"4.- Cerrar el programa"<<endl;
-        cout<<"Indica el número de la operación";
-        cout<<"WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW"<<endl;
-        cin>>operacion;
+    bool continuar = true;
+    while (continuar == true) {
+        t_ent operacion = 0;
+        cout << "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM" << endl;
+        cout << "Que operacion desea hacer??  " << endl;
+        cout << "1.- Ingresar un producto" << endl;
+        cout << "2.- Retirar un producto" << endl;
+        cout << "3.- Estado del Robot" << endl;
+        cout << "4.- Cerrar el programa" << endl;
+        cout << "Indica el número de la operación" << endl;
+        cout << "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW" << endl;
+        cin >> operacion;
         switch (operacion) {
             case 1: {
                 cout << endl << "--------------------------------------------------" << endl;
@@ -89,9 +92,11 @@ void ejecucion_de_ordenes() {
                 cout << endl << "--------------------------------------------------" << endl;
                 break;
             }
-            case 4:
-                operacion=false;
+            case 4: {
+                continuar = false;
                 break;
+            }
         }
+
     }
 }
