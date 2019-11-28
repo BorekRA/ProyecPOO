@@ -1,6 +1,6 @@
 #include "Cproducto.h"
 #include "tipos.h"
-Cproducto::Cproducto(texto n, let l, posicion x,posicion y):nombre{n},letra{l},posx{x},posy{y}{
+Cproducto::Cproducto(texto n, let l, posicion x,posicion y,cantidad c):nombre{n},letra{l},posx{x},posy{y},cuantos{c}{
 
 }
 
