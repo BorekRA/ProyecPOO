@@ -1,6 +1,5 @@
 #ifndef PROYECTO_POO_CALMACEN_H
 #define PROYECTO_POO_CALMACEN_H
-
 #include "tipos.h"
 #include "Corden.h"
 #include "Cproducto.h"
@@ -22,8 +21,7 @@ public:
 };
 
 Calmacen crear_almacen(istream& in);
-void indicar_productos(Calmacen& A1, istream& in);
-void indicar_robots(Calmacen& A1,istream& in);
-
+//void indicar_productos(Calmacen& A1, istream& in);
+//void indicar_robots(Calmacen& A1,istream& in);
 
 #endif //PROYECTO_POO2_CALMACEN_H
