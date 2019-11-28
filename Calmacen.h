@@ -1,6 +1,3 @@
-//#include "robot.h"
-//#include "slots.h"
-//#include "producto.h"
 #include "tipos.h"
 #include "Corden.h"
 #include "Cproducto.h"
