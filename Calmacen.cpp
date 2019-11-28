@@ -71,10 +71,10 @@ void indicar_robots(Calmacen& A1,istream& in){
         Crobot rt(nom, x-1, y-1);
         A1.agregar_robot(rt);}
 }
-void tomar_producto(Crobot R,Cproducto P,Corden O);
-void tomar_producto(Crobot R,Cproducto P,Corden O){
+//void tomar_producto(Crobot R,Cproducto P,Corden O);
+//void tomar_producto(Crobot R,Cproducto P,Corden O){
 
 }
 
-void dejar_producto();
-void retornar_casa();
+//void dejar_producto();
+//void retornar_casa();
