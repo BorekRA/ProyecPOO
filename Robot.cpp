@@ -26,3 +26,7 @@ void CRobot::alternate_state() {
     if (state != 0) state=false;
     if (state == 0) state=true;
 }
+void CRobot::mover_robot(t_posicion x, t_posicion y){
+pos_x=x; pos_y=y;
+    current_location[pos_x][pos_y];
+}
