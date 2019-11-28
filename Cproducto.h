@@ -1,6 +1,5 @@
 #ifndef PROYECTO_POO_PRODUCTO_H
 #define PROYECTO_POO_PRODUCTO_H
-
 #include "tipos.h"
 
 class Cproducto{
@@ -8,8 +7,9 @@ class Cproducto{
     let letra;
     posicion posx;
     posicion posy;
+    cantidad cuantos;
 public:
-    Cproducto(texto n,let l, posicion x, posicion y);
+    Cproducto(texto n,let l, posicion x, posicion y,cantidad c);
     void set_nombre(texto n);
     valor get_x(){return posx;};
     valor get_y(){return posy;};
@@ -17,7 +17,5 @@ public:
     texto get_nombre();
     let get_letra();
 };
-
-
 
 #endif //PROYECTO_POO_PRODUCTO_H
