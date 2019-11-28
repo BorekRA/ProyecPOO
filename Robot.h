@@ -10,6 +10,7 @@ private:
     posicion pos_x;
     posicion pos_y;
     matrix_t home;
+    matrix_t current_location;
     t_ent name;
     verificador state= true;
     t_ent battery;
@@ -21,6 +22,7 @@ public:
     void recharge_battery();
     void set_order(COrden* p_order);
     void alternate_state();
+    void mover_robot(t_posicion x, t_posicion y);
 
 
 };
