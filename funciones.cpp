@@ -1,6 +1,6 @@
 #include "funciones.h"
 #include "tipos.h"
-#include "almacen.h"
+#include "Calmacen.h"
 void menu_principal() {
     cout<<"MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM"<<endl;
     cout<<"-------------------**********---------------------"<<endl;
