@@ -1,6 +1,6 @@
 #include <iostream>
 #include "tipos.h"
-#include "almacen.h"
+#include "Calmacen.h"
 void inicio(){
     cout<<"--------------------------------------------------"<<endl;
     valor columnas=0;
