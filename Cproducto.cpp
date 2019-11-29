@@ -1,3 +1,4 @@
+
 #include "Cproducto.h"
 #include "tipos.h"
 Cproducto::Cproducto(texto n, let l, posicion x,posicion y,cantidad c):nombre{n},letra{l},posx{x},posy{y},cuantos{c}{
@@ -22,4 +23,8 @@ void Cproducto::set_letra(let l) {
 
 let Cproducto::get_letra() {
     return letra;
+}
+void Cproducto::set_posicion_p(valor x, valor y, vector<vector<texto>> s) {
+    posx=x; posy=y;
+    s[posx][posy];
 }
