@@ -1,10 +1,13 @@
+//
+// Created by Mate on 25/11/2019.
+//
+
 #include "Calmacen.h"
 #include "tipos.h"
 #include "Cproducto.h"
-#include "Corden.h"
 #include "Crobot.h"
 
-Calmacen::Calmacen(valor c, valor f):col{c},fil{f},slots(fil,vector<texto>(col)){
+Calmacen::Calmacen(valor c, valor f):col{c},fil{f},slots(fil,vector<texto>(col)),v(){
 }
 void Calmacen::almacen_vacio() {
     for (auto& row:slots)
@@ -31,12 +34,54 @@ void Calmacen::agregar_robot(Crobot rt) {
     slots[rt.get_x()][rt.get_y()] = rt.get_nombre();
 }
 
-void Calmacen::execute_operation(Crobot* r, Cproducto* p, vector<vector<texto>> s, valor x, valor y) {
-robot=r; producto=p;
-slots=s;
-r->set_posicion_r(x,y,slots);
-p->set_posicion_p(x,y,slots);
+void Calmacen::rellenar_vector_robots(Crobot*& R){
+    v.push_back(R);
+}
 
+void Calmacen::usar_robot() {
+    texto a=" ";
+    cout<<"Indique el nombre del robot (Ex-->R1):";cin>>a;
+    for (cantidad i=0;i<v.size();i++){
+        if (v[i]->get_nombre()==a){
+            cout<<"Robot existente";
+            posicion x=0, y=0;
+            x=v[i]->get_x();
+            y=v[i]->get_y();
+            posicion u=0; posicion o=0;
+            cout<<"Indique la posicion a x";cin>>u;
+            cout<<"Indique la posicion a y";cin>>o;
+            for(cantidad f=0; f<1000; f++){
+                for (cantidad p=0;p<1000;p++){
+                    if (y<o){
+                        y+=1;
+                        v[i]->set_y(y);//imprimir almacen;
+                    }
+                    if (y>o){
+                        y-=1;
+                        v[i]->set_y(y);//imprimir almacen;
+                    }
+                    if(y==o) break;
+                }
+                if (x<u){
+                    x+=1;
+                    v[i]->set_x(x);
+                }
+                if (x>u){
+                    x-=1;
+                    v[i]->set_x(x);
+                if(x==u) break;
+              //imprimir almacen;
+            }
+        }}
+        else{
+            cout<<"Indique un robot existente:";cin>>a;
+        }
+
+    }
+}
+
+void Calmacen::rellenar_vector_productos(Cproducto *& P) {
+    n.push_back(P);
 }
 
 Calmacen crear_almacen(istream& in){
@@ -49,7 +94,6 @@ Calmacen crear_almacen(istream& in){
     Calmacen A(c1,f1);
     return A;}
 
-
 void indicar_productos(Calmacen& A1, istream& in){
     cantidad n;texto t;let r;posicion x;posicion y;cantidad c;
     cout<<"Indique la cantidad de productos que va a ingresar:";in>>n;
@@ -60,31 +104,21 @@ void indicar_productos(Calmacen& A1, istream& in){
         cout<<"Posicion x:";in>>x;
         cout<<"Posicion y:";in>>y;
         cout<<"Cantidad del producto:";in>>c;
-        if (c==0) {cout<<"Indique una cantidad válida:";in>>c;}
-        else if (x>A1.get_col()){cout<<"Posición no válida";in>>x;}
-        else if (y>A1.get_fil() || y==1){cout<<"Posición no válida"<<endl;i++;}
+        if (c<=0) {cout<<"Indique una cantidad válida:";in>>c;}
+        else if (x>A1.get_col()){cout<<"Posición no válida, indique una nueva:";in>>x;}
+        else if (y>A1.get_fil() || y==1){cout<<"Posición no válida, indique una nueva:";in>>y;}
         Cproducto P(t,r,x-1,y-1,c);
         A1.agregar_productos(P);}
 }
 
 void indicar_robots(Calmacen& A1,istream& in){
-    cantidad n=A1.get_fil(); posicion x=0; posicion y=0;texto nom;
-    cout << "¿Cuántos robots tendrá?---->";cin >> n;
+    cantidad n=A1.get_fil();t_posicion x=0;t_posicion y=0;texto nom;
     for (cantidad i = 0; i < n; i++) {
-        cout << "Indique su nombre (ejemplo--> R9):";in >> nom;
+        cout<<"Indique el nombre del robot:";in>>nom;
         Crobot rt(nom, x, y);
+        auto *ptrR=&rt;
+        A1.rellenar_vector_robots(*&ptrR);
         A1.agregar_robot(rt);
-        x=x=1;
+        x=x+1;
     }
 }
-void sacar_productos(Calmacen& A1, istream& in){
-    texto t;let r;posicion x;posicion y;
-    cout<<"Indique el nombre del producto:";in>>t;
-
-
-}
-//void tomar_producto(Crobot R,Cproducto P,Corden O);
-//void tomar_producto(Crobot R,Cproducto P,Corden O){
-
-//void dejar_producto();
-//void retornar_casa();63
