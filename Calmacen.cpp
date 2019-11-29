@@ -1,4 +1,3 @@
-
 #include "Calmacen.h"
 #include "tipos.h"
 #include "Cproducto.h"
@@ -32,6 +31,14 @@ void Calmacen::agregar_robot(Crobot rt) {
     slots[rt.get_x()][rt.get_y()] = rt.get_nombre();
 }
 
+void Calmacen::execute_operation(Crobot* r, Cproducto* p, vector<vector<texto>> s, valor x, valor y) {
+robot=r; producto=p;
+slots=s;
+r->set_posicion_r(x,y,slots);
+p->set_posicion_p(x,y,slots);
+
+}
+
 Calmacen crear_almacen(istream& in){
     valor c1=0;
     valor f1=0;
@@ -41,6 +48,7 @@ Calmacen crear_almacen(istream& in){
     in>>f1;
     Calmacen A(c1,f1);
     return A;}
+
 
 void indicar_productos(Calmacen& A1, istream& in){
     cantidad n;texto t;let r;posicion x;posicion y;cantidad c;
@@ -52,29 +60,31 @@ void indicar_productos(Calmacen& A1, istream& in){
         cout<<"Posicion x:";in>>x;
         cout<<"Posicion y:";in>>y;
         cout<<"Cantidad del producto:";in>>c;
-        //if (c==0) {cout<<"Indique una cantidad válida:";in>>c;}
-        //else if (x>A1.get_col()){cout<<"Posición no válida"<<endl;i++;}
-        //else if (y>A1.get_fil()){cout<<"Posición no válida"<<endl;i++;}
+        if (c==0) {cout<<"Indique una cantidad válida:";in>>c;}
+        else if (x>A1.get_col()){cout<<"Posición no válida";in>>x;}
+        else if (y>A1.get_fil() || y==1){cout<<"Posición no válida"<<endl;i++;}
         Cproducto P(t,r,x-1,y-1,c);
         A1.agregar_productos(P);}
 }
 
 void indicar_robots(Calmacen& A1,istream& in){
-    cantidad n;t_posicion x;t_posicion y;texto nom;
+    cantidad n=A1.get_fil(); posicion x=0; posicion y=0;texto nom;
     cout << "¿Cuántos robots tendrá?---->";cin >> n;
     for (cantidad i = 0; i < n; i++) {
-        cout << "Indique su posicion inicial en x:";cin >> x;
-        cout << "Indique su posicion inicial en y:";cin >> y;
-        cout << "Indique su nombre (ejemplo--> R9):";cin >> nom;
-        //if (x>A1.get_col()){cout<<"Posición no válida"<<endl;i++;}
-        //else if (y!=1){cout<<"Posición no válida"<<endl;}
-        Crobot rt(nom, x-1, y-1);
-        A1.agregar_robot(rt);}
+        cout << "Indique su nombre (ejemplo--> R9):";in >> nom;
+        Crobot rt(nom, x, y);
+        A1.agregar_robot(rt);
+        x=x=1;
+    }
+}
+void sacar_productos(Calmacen& A1, istream& in){
+    texto t;let r;posicion x;posicion y;
+    cout<<"Indique el nombre del producto:";in>>t;
+
+
 }
 //void tomar_producto(Crobot R,Cproducto P,Corden O);
 //void tomar_producto(Crobot R,Cproducto P,Corden O){
 
-}
-
 //void dejar_producto();
-//void retornar_casa();
+//void retornar_casa();63
