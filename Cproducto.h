@@ -1,8 +1,9 @@
 #ifndef PROYECTO_POO_PRODUCTO_H
 #define PROYECTO_POO_PRODUCTO_H
+
 #include "tipos.h"
 
-class Cproducto{
+class Cproducto {
     texto nombre;
     let letra;
     posicion posx;
@@ -16,6 +17,9 @@ public:
     void set_letra(let l);
     texto get_nombre();
     let get_letra();
+    void set_posicion_p(valor x, valor y, vector<vector<texto>> s);
 };
+
+
 
 #endif //PROYECTO_POO_PRODUCTO_H
