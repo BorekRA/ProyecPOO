@@ -2,6 +2,8 @@
 #define PROYECTO_POO_TIPOS_H
 
 
+
+
 #include<iostream>
 #include <vector>
 #include<string>
@@ -22,5 +24,17 @@ typedef bool banderita;
 using let=char;
 using t_ent=int;
 using verificador=bool;
+void menu_principal();
+void menu_principal() {
+    cout<<"MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM"<<endl;
+    cout<<"-------------------**********---------------------"<<endl;
+    cout<<"...................BIENVENIDO....................."<<endl;
+    cout<<"-------------------**********---------------------"<<endl;
+    cout<<"WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW"<<endl;
+    cout<<endl;
+    cout<<"Programa creado por:"<<endl;
+    cout<<"Leonardo López"<<endl<<"Mateo Malla"<<endl<<"Norel Rodriguez"<<endl;
+    cout<<endl;
+}
 
 #endif //PROYECTO_POO_TIPOS_H
